@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let p = new Promise((resolve, reject) => {
+        console.log(a);
+        resolve()
+      });
+      console.log(p, 'p')
+      
+      let p2 = p.then(
+        () => {},
+        () => {
+          console.log(c, "error");
+        }
+      );
+      console.log(p2, 'p2');
+
+      let p3 = p2.then(
+        () => console.log("success"),
+        () => console.log("failed")
+      );
+
+      console.log(p3, 'p3');
+    </script>
+  </body>
+</html>
